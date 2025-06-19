@@ -1,0 +1,43 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	// At a minimum, the name, main and compatibility_date keys are required to deploy a Worker.
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+	// overall project name, will appear in Cloudflare dashboard. BEWARE OF COPY PASTE!
+	"name": "hello-world--cloudflare--workers--vite--2025",
+
+	// https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+	"compatibility_date": "2025-06-18",
+
+	/*
+	 * no_bundle
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#custom-builds
+	 */
+	"main": "./src/index.ts",
+
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 */
+	// "vars": { "MY_VARIABLE": "production_value" },
+	/**
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+
+	/**
+	 * Service Bindings (communicate between multiple Workers)
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	 */
+	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
+}
