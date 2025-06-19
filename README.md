@@ -3,7 +3,7 @@
 Testing this: https://developers.cloudflare.com/workers/vite-plugin/
 
 Concepts:
-* workers 
+* workers https://developers.cloudflare.com/workers/reference/how-workers-works/
 * vite "Environments" https://vite.dev/guide/api-environment
 
 

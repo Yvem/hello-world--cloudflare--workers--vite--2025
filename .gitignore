@@ -7,7 +7,7 @@ node_modules
 
 
 ### re-generable or auto-generated
-**/dist
+dist/hello_world__cloudflare__workers__vite__2025/.vite/
 ## intentionally unused
 package-lock.json
 
@@ -24,6 +24,8 @@ package-lock.json
 .~lock.*
 ## netlify
 .netlify
+## Cloudflare wrangler
+.wrangler
 
 
 ### Logs
