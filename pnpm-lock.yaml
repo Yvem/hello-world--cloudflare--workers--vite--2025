@@ -9,14 +9,20 @@ importers:
   .:
     devDependencies:
       '@cloudflare/vite-plugin':
-        specifier: ^1.7.2
-        version: 1.7.2(rollup@4.44.0)(vite@6.3.5)(workerd@1.20250617.0)(wrangler@4.20.3)
+        specifier: ^1
+        version: 1.7.2(rollup@4.44.0)(vite@6.3.5)(workerd@1.20250617.0)(wrangler@4.20.3(@cloudflare/workers-types@4.20250619.0))
+      '@cloudflare/workers-types':
+        specifier: ^4
+        version: 4.20250619.0
+      pokemon:
+        specifier: ^3
+        version: 3.3.0
       vite:
-        specifier: ^6.3.5
+        specifier: ^6
         version: 6.3.5
       wrangler:
-        specifier: ^4.20.3
-        version: 4.20.3
+        specifier: ^4
+        version: 4.20.3(@cloudflare/workers-types@4.20250619.0)
 
 packages:
 
@@ -68,6 +74,9 @@ packages:
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
+
+  '@cloudflare/workers-types@4.20250619.0':
+    resolution: {integrity: sha512-OYmVTA45rEEsOmchtltDnrG6BBaOPB7LUGKoyE8AwkfanUOc3/wwuMZ50i1jq6NKrV1TZLsKUKzrwe1NtVGOzQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -746,6 +755,10 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
+  pokemon@3.3.0:
+    resolution: {integrity: sha512-0/wSI1F1SsM0zc/WH+96z1SpfRjRqjUw/Z/31mX+D7BmJhajkhR/Jg8hZD5DhsBhNTOMVm+u/BwA5wJ+dt3j1g==}
+    engines: {node: '>=18'}
+
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
@@ -801,6 +814,14 @@ packages:
 
   unenv@2.0.0-rc.17:
     resolution: {integrity: sha512-B06u0wXkEd+o5gOCMl/ZHl5cfpYbDZKAT+HWTL+Hws6jWu7dCiqBBXXXzMFcFVJb8D4ytAnYmxJA83uwOQRSsg==}
+
+  unique-random-array@2.0.0:
+    resolution: {integrity: sha512-xR87O95fZ7hljw84J8r1YDXrvffPLWN513BNOP4Bv0KcgG5dyEUrHwsvP7mVAOKg4Y80uqRbpUk0GKr8il70qg==}
+    engines: {node: '>=8'}
+
+  unique-random@2.1.0:
+    resolution: {integrity: sha512-iQ1ZgWac3b8YxGThecQFRQiqgk6xFERRwHZIWeVVsqlbmgCRl0PY13R4mUkodNgctmg5b5odG1nyW/IbOxQTqg==}
+    engines: {node: '>=6'}
 
   vite@6.3.5:
     resolution: {integrity: sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==}
@@ -887,7 +908,7 @@ snapshots:
     optionalDependencies:
       workerd: 1.20250617.0
 
-  '@cloudflare/vite-plugin@1.7.2(rollup@4.44.0)(vite@6.3.5)(workerd@1.20250617.0)(wrangler@4.20.3)':
+  '@cloudflare/vite-plugin@1.7.2(rollup@4.44.0)(vite@6.3.5)(workerd@1.20250617.0)(wrangler@4.20.3(@cloudflare/workers-types@4.20250619.0))':
     dependencies:
       '@cloudflare/unenv-preset': 2.3.3(unenv@2.0.0-rc.17)(workerd@1.20250617.0)
       '@mjackson/node-fetch-server': 0.6.1
@@ -898,7 +919,7 @@ snapshots:
       tinyglobby: 0.2.14
       unenv: 2.0.0-rc.17
       vite: 6.3.5
-      wrangler: 4.20.3
+      wrangler: 4.20.3(@cloudflare/workers-types@4.20250619.0)
       ws: 8.18.0
     transitivePeerDependencies:
       - bufferutil
@@ -920,6 +941,8 @@ snapshots:
 
   '@cloudflare/workerd-windows-64@1.20250617.0':
     optional: true
+
+  '@cloudflare/workers-types@4.20250619.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -1397,6 +1420,10 @@ snapshots:
 
   picomatch@4.0.2: {}
 
+  pokemon@3.3.0:
+    dependencies:
+      unique-random-array: 2.0.0
+
   postcss@8.5.6:
     dependencies:
       nanoid: 3.3.11
@@ -1496,6 +1523,12 @@ snapshots:
       pathe: 2.0.3
       ufo: 1.6.1
 
+  unique-random-array@2.0.0:
+    dependencies:
+      unique-random: 2.1.0
+
+  unique-random@2.1.0: {}
+
   vite@6.3.5:
     dependencies:
       esbuild: 0.25.5
@@ -1515,7 +1548,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250617.0
       '@cloudflare/workerd-windows-64': 1.20250617.0
 
-  wrangler@4.20.3:
+  wrangler@4.20.3(@cloudflare/workers-types@4.20250619.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.3.3(unenv@2.0.0-rc.17)(workerd@1.20250617.0)
@@ -1526,6 +1559,7 @@ snapshots:
       unenv: 2.0.0-rc.17
       workerd: 1.20250617.0
     optionalDependencies:
+      '@cloudflare/workers-types': 4.20250619.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
