@@ -14,3 +14,6 @@ pnpm dev
 pnpm build
 
 ```
+
+
+https://github.com/ai/size-limit
